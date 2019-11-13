@@ -7,18 +7,18 @@ function buildAppendages(numArms){
         if(hasSuckers==true){
             //if they have suckers they could still be tentacles or arms
             return function(suckerLocation){
-                //if the sucker location is at the ends, arms
+                //if the sucker location is at the ends, tentacles
                 if(suckerLocation=="ends"){
                     suckerState="with suckers at the ends"
-                    return `${numArms} arms ${suckerState}`;
+                    return `${numArms} tentacles ${suckerState}`;
                 }else{
-                    //otherwise tentacles
-                    return `${numArms} tentacles`;
+                    //otherwise arms
+                    return `${numArms} arms`;
                 }
             }
         }else{
-            //if no suckers, they are arms
-            return `${numArms} arms ${suckerState}`;
+            //if no suckers, they are tentacles
+            return `${numArms} tentacles ${suckerState}`;
         }
     }
 }
