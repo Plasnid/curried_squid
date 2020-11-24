@@ -23,10 +23,10 @@ function buildAppendages(numArms){
     }
 }
 
-let arms = buildAppendages(10)(true)("ends");
-console.log(arms);
-let tentacles = buildAppendages(8)(true)();
+let tentacles = buildAppendages(10)(true)("ends");
 console.log(tentacles);
+let arms = buildAppendages(8)(true)();
+console.log(arms);
 
 function buildCephalopod(speciesName){
     return function(hasShell){
@@ -40,9 +40,9 @@ function buildCephalopod(speciesName){
         }
     }
 }
-let spirulida = buildCephalopod("Spirulida")(true)(buildAppendages(8)(true)("ends"),buildAppendages(2)(true)());
+let spirulida = buildCephalopod("Spirulida")(true)(buildAppendages(2)(true)(),buildAppendages(8)(true)("ends"));
 console.log(spirulida);
-let octopoda = buildCephalopod("Octopoda")(false)("",buildAppendages(8)(true)());
+let octopoda = buildCephalopod("Octopoda")(false)(buildAppendages(8)(true)(),"");
 console.log(octopoda);
 
 /*
